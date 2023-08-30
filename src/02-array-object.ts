@@ -164,3 +164,39 @@ console.log(greetHero(thor))
 // NOTE
 // 之後再討論 type vs. interface 的差別
 // 通常會以 interface 為主
+
+
+
+/*
+ *  Enums
+ */
+
+// 1. a special "class" that represents a group of constants (unchangeable variables).
+
+// 2. unlike most typescript features, Enums are not a type-level addtion to javascript
+//    but something added to the language and runtime.
+
+// 3. by default,
+//    enums will initialize the first value to 0 and add 1 to each additional value
+
+enum Grade {
+    U,
+    D,
+    C,
+    B,
+    A
+}
+
+console.log(Grade.U); // 0
+
+
+// 4. you can set the value of the first numeric enum and have it auto increment from that
+enum Grade2 {
+    U = 1,
+    D, // 2
+    C, // 3
+    B, // 4
+    A  // 5
+}
+
+console.log(Grade2.U); // 1
