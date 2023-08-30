@@ -121,7 +121,7 @@ let captain: Hero = {
 // 也可以用
 // type Hero = {}
 interface SuperHero {
-    name?: string,  // string | undefined (become union type)
+    name?: string,  // name is optional, string | undefined (become union type)
     active: boolean,
     movie: (string | number)[]
 }
@@ -132,7 +132,7 @@ let ironMan: SuperHero = {
     movie: ['I', 'II', 1975]
 }
 
-// 沒有加上 active property 也沒關係
+// 沒有加上 'name' property 也沒關係
 let thor: SuperHero = {
     active: false,
     movie: ['love & thunder', 1980]
