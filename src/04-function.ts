@@ -218,3 +218,88 @@ const countTotal_2 = (num1: number, ...nums: number[]): number => {
 }
 
 logMessage(countTotal_2(10, 1, 2, 3, 4, 5)) // 25
+
+
+
+/*
+ * Never type
+ * 不常看到，但在某些時刻可能會需要
+ *
+ * 永遠不會發生的值
+ * 永遠不會結束或返回的運算，例如拋出異常或進入無限迴圈
+ */
+
+
+const creatError = (errMsg: string) => {
+    throw new Error(errMsg)
+}
+// 滑鼠移到 'creatErro', vscode 會顯示
+// const creatError: (errMsg: any) => never
+// The function will return a 'never' type
+
+
+const infiniteLoop = () => {
+    let i: number = 1;
+
+    while(true) {
+        i++
+    }
+}
+// 滑鼠移到 'infiniteLoop', vscode 會顯示
+// const infiniteLoop: () => never
+// ps. Demo 用，千萬不要呼叫
+
+
+const infiniteLoop2 = () => {
+    let i: number = 1;
+
+    while(true) {
+        i++
+
+        // 加上這行就能終止無線迴圈，return void (nothing)
+        if (i > 10) {
+            break;
+        }
+    }
+}
+// 滑鼠移到 'infiniteLoop2', vscode 會顯示
+// const infiniteLoop2: () => void
+
+
+// Never type 的實際運用
+const handleNumberOrString = (value: number | string): string => {
+    // Type guards to check the value
+    if (typeof value === 'string') {
+        return 'String';
+    }
+
+    if (typeof value === 'number') {
+        return 'Number'
+    }
+
+    // 沒有加上這行話，vscode 會顯示 error
+    // Function lacks ending return statement and return type does not include 'undefined'.
+    // return a never type
+    return creatError('This should never happen!')
+}
+
+
+// Custom type guards
+// 如果很常需要檢查 type，通常會另外寫 type guards
+const isNumber = (value: any): boolean => {
+    return typeof value === 'number'
+        ? true : false;
+}
+
+const handleNumberOrString2 = (value: number | string): string => {
+    // Type guards to check the value
+    if (typeof value === 'string') {
+        return 'String';
+    }
+
+    if (isNumber(value)) {
+        return 'Number'
+    }
+
+    return creatError('This should never happen!')
+}
