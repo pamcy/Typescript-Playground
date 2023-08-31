@@ -1,6 +1,6 @@
-/*
- *  Array
- */
+/* ==============================
+ Array
+============================== */
 
 let stringArr = ['pamcy', 'adai', 'ami']
 // string[]
@@ -41,7 +41,10 @@ hero.push('thor')
 // 但，可以進一步強制，看以下 Tuple type
 
 
-// Tuple type
+
+/*
+ * Tuple type
+ */
 
 let veryStrictArr: [string, number, boolean] = ['frogs', 30, true]
 // [string, number, boolean]
@@ -62,9 +65,10 @@ normalArr = veryStrictArr
 
 
 
-/*
- *  Object
- */
+
+/* ==============================
+ Object
+============================== */
 
 let myObj: object
 myObj = []
@@ -164,12 +168,14 @@ console.log(greetHero(thor))
 // NOTE
 // 之後再討論 type vs. interface 的差別
 // 通常會以 interface 為主
+// ⭐ 見 04-function.ts
 
 
 
-/*
- *  Enums
- */
+
+/* ==============================
+ Enums
+============================== */
 
 // 1. a special "class" that represents a group of constants (unchangeable variables).
 
