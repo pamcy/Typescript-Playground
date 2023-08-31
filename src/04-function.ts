@@ -60,3 +60,161 @@ const myGender: Gender = 'Female'
 
 // const myGender2: Gender = 'Other'
 // Type '"Other"' is not assignable to type 'Gender'.
+
+
+
+
+/* ========================================
+ Function
+======================================== */
+
+const addNumbers = (a: number, b: number) => {
+    return a + b;
+}
+// 滑鼠移到 'addNumbers', vscode 會顯示
+// const addNumbers: (a: number, b: number) => number
+// => number (代表 the function will return a number)
+
+
+/*
+ * () 之後加上 :
+ * Type of the data that the function will return
+ */
+const addTotalNumbers = (a: number, b: number): number => {
+    return a + b;
+}
+
+const logMessage = (msg: any) => {
+    console.log(msg);
+}
+// 滑鼠移到 'logMessage', vscode 會顯示
+// const logMessage: (msg: any) => void
+
+
+/*
+ * ⭐ Void type
+ * A void type of return data
+ * Function that do not return anything
+ */
+
+
+const logMessageOnly = (msg: any): void => {
+    console.log(msg);
+}
+
+logMessageOnly('Hallo Welt!') // Hallo Welt!
+logMessageOnly(addTotalNumbers(3, 2)) // 5
+
+// logMessageOnly(addTotalNumbers(1, 'Go!'))
+// Argument of type 'string' is not assignable to parameter of type 'number'.
+
+
+// 以下範例改使用 regular function 取代 arrow function
+
+// PS. 不建議使用： function subtractNumbers () {}
+// 要套用 function type alias 會變得很多餘、麻煩
+
+const subtractNumbers = function (a: number, b: number) {
+    return a - b;
+}
+
+
+/*
+ * 如果同樣的參數 type 都一樣
+ * 也可以使用 type alias for function
+ */
+
+
+type mathFunction = (a: number, b: number) => number
+
+// 也可以用 Interface，結果都是一樣
+// interface mathFunction {
+//     (a: number, b: number): number
+// }
+
+
+const multiplyNumbers: mathFunction = function (c, d) {
+    return c * d;
+}
+
+logMessageOnly(multiplyNumbers(2, 3))
+
+
+// Type vs. Interface 通常使用情境
+// - Interfaces: I'm thinking more about 'classes' and being able to extend those
+// - Type alias: Functions and other basic types
+
+
+
+/*
+ * Optional parameters & default values
+ */
+
+// Optional parameters
+
+// 加上 ？ ： it's optional value
+const addAll = (a: number, b: number, c?: number): number => {
+    // 如果只有寫這樣
+    // return a + b + c;
+    // error: 'c' is possibly 'undefined'
+
+    if (c !== undefined) {
+        return a + b + c
+    }
+
+    // 如果不加上這行，會出現 error
+    // Function lacks ending return statement and return type does not include 'undefined'.
+
+    return a + b
+}
+
+logMessage(addAll(1, 2)) // 3
+logMessage(addAll(1, 2, 3)) // 6
+
+
+// Default values
+
+const sumAll = (a: number, b: number, c: number = 1): number => {
+    return a + b + c;
+}
+
+logMessage(sumAll(1, 2)) // 4
+logMessage(sumAll(1, 2, 3)) // 6
+
+
+// 如果第一個是 optional value， argument 一定要傳入 undefined
+const sumAll_2 = (a: number = 7, b: number, c: number = 1): number => {
+    return a + b + c;
+}
+
+logMessage(sumAll_2(undefined, 3)) // 11
+logMessage(sumAll_2(5, 3, 2)) // 10
+
+
+// !! NOTE !!
+// Default values 無法使用 function type alias
+// ex. type mathFunction = (a: number, b: number) => number
+
+
+
+/*
+ * Rest parameters
+ */
+
+
+// we don't know how many numbers
+// A rest parameter must be of an 'array' type
+
+const countTotal = (...nums: number[]): number => {
+    return nums.reduce((prev, current) => prev + current, 0);
+}
+
+logMessage(countTotal(1, 2, 3, 4, 5)) // 15
+
+
+// rest operators 要放在最後面，required parameters 放在最前面
+const countTotal_2 = (num1: number, ...nums: number[]): number => {
+    return num1 + nums.reduce((prev, current) => prev + current, 0);
+}
+
+logMessage(countTotal_2(10, 1, 2, 3, 4, 5)) // 25
