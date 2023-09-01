@@ -1,10 +1,15 @@
-/* ========================================
- Type aliases (Reusable Types)
+/* =================================================================================
+ Type aliases (型別別名)
 
- - 型別別名
- - 創建一個新的型別名稱，並且為它指定一個現有的型別
- - 優點：同樣的型別不需要重複寫 keeping your code DRY（Don't Repeat Yourself
-======================================== */
+ - Reusable Types
+   - 創建一個新的型別名稱，並且為它指定一個現有的型別
+   - 優點：同樣的型別不需要重複寫 keeping your code DRY（Don't Repeat Yourself
+
+ - 教學
+   - https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases
+   - https://willh.gitbook.io/typescript-tutorial/advanced/type-aliases
+
+================================================================================= */
 
 type stringOrNumber = string | number
 
@@ -36,7 +41,7 @@ interface UserId = stringOrNumber
 
 
 
-/* ========================================
+/* =================================================================================
  Literal types
 
  - 字面量型別
@@ -44,7 +49,10 @@ interface UserId = stringOrNumber
  - 指定具體的值
  - You might have a variable where only "certain values" are expected
  - 優點：keeping your code DRY（Don't Repeat Yourself）
-======================================== */
+ - 教學
+   - https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types
+   - https://willh.gitbook.io/typescript-tutorial/advanced/string-literal-types
+================================================================================= */
 
 let seats: 'Window' | 'Aisle' | 'Middle'
 
@@ -64,9 +72,14 @@ const myGender: Gender = 'Female'
 
 
 
-/* ========================================
+/* =================================================================================
  Function
-======================================== */
+
+  - 教學
+   - https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#functions
+   - https://willh.gitbook.io/typescript-tutorial/basics/type-of-function
+
+================================================================================= */
 
 const addNumbers = (a: number, b: number) => {
     return a + b;

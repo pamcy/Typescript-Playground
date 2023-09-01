@@ -1,4 +1,10 @@
-// basic types
+/* =================================================================================
+ Basic types
+
+ - 教學
+   - https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#the-primitives-string-number-and-boolean
+   - https://willh.gitbook.io/typescript-tutorial/basics/primitive-data-types
+================================================================================= */
 
 let myName: string = 'Pamcy'
 let luckyNumer: number = 8

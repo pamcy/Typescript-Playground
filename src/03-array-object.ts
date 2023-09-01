@@ -1,6 +1,10 @@
-/* ==============================
+/* =================================================================================
  Array
-============================== */
+  - 教學
+    - https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#arrays
+    - https://willh.gitbook.io/typescript-tutorial/basics/type-of-array
+
+================================================================================= */
 
 let stringArr = ['pamcy', 'adai', 'ami']
 // string[]
@@ -66,9 +70,13 @@ normalArr = veryStrictArr
 
 
 
-/* ==============================
+/* =================================================================================
  Object
-============================== */
+ - 教學
+   - https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#object-types
+   - https://willh.gitbook.io/typescript-tutorial/basics/type-of-object-interfaces
+
+================================================================================= */
 
 let myObj: object
 myObj = []
@@ -173,9 +181,15 @@ console.log(greetHero(thor))
 
 
 
-/* ==============================
- Enums
-============================== */
+/* =================================================================================
+ Enums (列舉)
+
+ - 用於取值被限定在一定範圍內的場景，比如一週只能有七天，顏色限定為紅綠藍等。
+ - 教學
+   - https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#enums
+   - https://willh.gitbook.io/typescript-tutorial/advanced/enum
+
+================================================================================= */
 
 // 1. a special "class" that represents a group of constants (unchangeable variables).
 

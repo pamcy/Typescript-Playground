@@ -4,14 +4,15 @@
  - 告訴 TypeScript compiler 某個變數的型別是我所聲稱的型別，並會忽略 compiler 推導的型別
  - 有的教學會用另一個名稱：Type Casting (型別轉換)
 
- - 教學
-   - https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions
-   - https://willh.gitbook.io/typescript-tutorial/basics/type-assertion
-
  - 用法
    - 值 as 型別
      - React 的 jsx 語法的 ts 版中，必須用這種
    - <型別>值
+
+ - 教學
+   - https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions
+   - https://willh.gitbook.io/typescript-tutorial/basics/type-assertion
+
 ====================================================================================== */
 
 
