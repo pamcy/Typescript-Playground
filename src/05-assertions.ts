@@ -80,3 +80,59 @@ let result2: number = addOrConcate(2, 3, 'concate') as number
 // - 沒必要情況下，不推薦使用
 (10 as unknown) as string
 
+
+
+
+/***** 實用案例 2: The DOM *****/
+
+// 情境 1
+// const imgEl = document.querySelector('img')
+// const imgEl: HTMLImageElement | null
+
+// imgEl.src
+// Error: 'imgEl' is possibly 'null'
+
+// 解決方式
+// 加上 ! ('non-null' assertion)
+const imgEl = document.querySelector('img')!
+imgEl.src
+
+
+// 💡 NOTE: non-null
+// Put exclamation mark (!) at the end here
+// We know it's not null, so just using an exclamation mark (!)
+
+
+
+// 情境 2
+// const imgClass = document.querySelector('.img')
+// const imgClass: Element | null
+
+// imgClass.src
+// Error: 'imgClass' is possibly 'null'.
+
+// 解決方式
+// 加上 'as HTMLImageElement'
+// vscode 會顯示一系列相關的 autocomplete
+// 這樣 'as HTMLImageElement'，就能使用 'src' property
+const imgClass = document.querySelector('.img') as HTMLImageElement
+imgClass.src
+
+
+// 情境 3
+// const imgId = document.getElementById('#img')
+// const imgId: HTMLElement | null
+
+// imgId.src
+// Error: 'imgId' is possibly 'null'
+
+// const imgId = document.getElementById('#img')!
+// imgId.src
+// Error: Property 'src' does not exist on type 'HTMLElement'.
+
+// 解決方式
+// 加上 'as HTMLImageElement'
+const imgId = document.getElementById('#img') as HTMLImageElement
+imgId.src
+
+
