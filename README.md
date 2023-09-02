@@ -1,22 +1,22 @@
 ## Table of Contents
-- Start
+- **Start**
     - run `npx tsc -w` in the terminal
 
-- Basic types
+- **Basic types**
     - The primitives: `string`, `number`, and `boolean`
     - `any` type
     - union type (`|`)
     - `RegExp` type
     - Function parameters
 
-- Array & object
+- **Array & object**
     - Array
         - Tuple type
     - Object
         - `interface`
     - Enums
 
-- Function
+- **Function**
     - Type aliases
         - Difference between `type` vs. `interface`
     - Literal types
@@ -30,7 +30,7 @@
         - `never` type
         - Type guards
 
-- Type Assertions (Type Casting)
+- **Type Assertions (Type Casting)**
     - 基本概念
         - 值 `as` 型別
         - `<` 型別 `>`值
@@ -41,4 +41,6 @@
         - Update copyright year with TS
 
 ## Resources
+- [TypeScript Full Course for Beginners | Complete All-in-One Tutorial](https://www.youtube.com/watch?v=gieEQFIfgYc) by Dave Gray
+- [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 - [TypeScript 新手指南](https://willh.gitbook.io/typescript-tutorial/)
