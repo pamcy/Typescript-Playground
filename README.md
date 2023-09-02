@@ -43,4 +43,5 @@
 ## Resources
 - [TypeScript Full Course for Beginners | Complete All-in-One Tutorial](https://www.youtube.com/watch?v=gieEQFIfgYc) by Dave Gray
 - [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-- [TypeScript 新手指南](https://willh.gitbook.io/typescript-tutorial/)
+- [TypeScript 新手指南](https://willh.gitbook.io/typescript-tutorial/) by 保哥
+    - 原文來自[TypeScript 入门教程](https://ts.xcatliu.com/)
